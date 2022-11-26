@@ -3,10 +3,8 @@ import time
 import pyscreenshot
 import numpy as np
 from PIL import Image
-import pytesseract
 import mouse
 
-pytesseract.pytesseract.tesseract_cmd = r'/home/mint/.local/bin/pytesseract'
 image_list = []
 
 #seen x=606, y=504
@@ -24,4 +22,15 @@ for i in range(3):
 	screenshot.save(f"word{i}.png")
 
 	im = Image.open(f"word{i}.png")
-	print(pytesseract.image_to_string(Image.open(f"word{i}.png")))
+	p = str(np.array(im))
+
+	if p in image_list:
+		print("seen image")
+		mouse.move(606,504,absolute=True,duration=0)
+		mouse.click(button='left')
+		pass
+	elif p not in image_list:
+		image_list.append(p)
+		mouse.move(744,504,absolute=True,duration=0)
+		mouse.click(button='left')
+		print("new image")
