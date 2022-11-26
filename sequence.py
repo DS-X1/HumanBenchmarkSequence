@@ -5,6 +5,9 @@ import numpy as np
 from PIL import Image
 image_list = []
 
+#seen x=606, y=504
+#new x=744, y=506
+
 for i in range(3):
 	time.sleep(4)
 	# im=pyscreenshot.grab(bbox=(x1,x2,y1,y2))
