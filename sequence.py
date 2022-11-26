@@ -1,5 +1,5 @@
 # Program for partial screenshot
-
+import time
 import pyscreenshot
 
 # im=pyscreenshot.grab(bbox=(x1,x2,y1,y2))
