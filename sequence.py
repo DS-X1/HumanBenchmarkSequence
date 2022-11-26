@@ -10,13 +10,18 @@ for i in range(3):
 	screenshot = pyscreenshot.grab(bbox=(10, 10, 500, 500))
 
 	# To view the screenshot
-	screenshot.show()
+	#screenshot.show()
 
 	# To save the screenshot
 	screenshot.save(f"word{i}.png")
 
 	im = Image.open(f"word{i}.png")
-	p = np.array(im)
-	image_list.append(p)
-	print(image_list)
-	time.sleep(2)
+	p = str(np.array(im))
+
+	if p in image_list:
+		print("seen image")
+		pass
+	elif p not in image_list:
+		image_list.append(p)
+		print("new image")
+		time.sleep(2)
