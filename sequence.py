@@ -6,8 +6,9 @@ from PIL import Image
 image_list = []
 
 for i in range(3):
+	time.sleep(4)
 	# im=pyscreenshot.grab(bbox=(x1,x2,y1,y2))
-	screenshot = pyscreenshot.grab(bbox=(10, 10, 500, 500))
+	screenshot = pyscreenshot.grab(bbox=(340, 371, 1040, 451))
 
 	# To view the screenshot
 	#screenshot.show()
@@ -24,4 +25,3 @@ for i in range(3):
 	elif p not in image_list:
 		image_list.append(p)
 		print("new image")
-		time.sleep(2)
